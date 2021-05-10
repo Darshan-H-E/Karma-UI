@@ -13,7 +13,6 @@ class KarmaPage extends StatelessWidget {
   }
 }
 
-//TODO:Search Bar
 class Body extends StatefulWidget {
   @override
   _BodyState createState() => _BodyState();
@@ -63,33 +62,50 @@ class _BodyState extends State<Body> {
                                         image: AssetImage(item),
                                         fit: BoxFit.cover,
                                       )),
-                                  child: Column(children: [
-                                    Text("9,523",
+                                  child: Column(
+									  crossAxisAlignment: CrossAxisAlignment.end,
+									  children: [
+                                    Padding( padding: EdgeInsets.only(top:20, right: 40), child: Text("9,523",
                                         style: TextStyle(
                                             color: Colors.white,
-                                            fontSize: 20.0)),
-                                    Text("JOINED",
-                                        style: TextStyle(color: Colors.white)),
-                                    Text("CATEGORY",
+                                            fontSize: 20.0,
+											fontWeight: FontWeight.w800
+											)),),
+                                    Padding( padding: EdgeInsets.only(right: 40), child: Text("JOINED",
+                                        style: TextStyle(
+											color: Colors.white,
+											fontStyle: FontStyle.italic
+											)),),
+                                    Padding( padding: EdgeInsets.only(top:70, right: 235), child: Text("CATEGORY",
                                         style: TextStyle(
                                             color: Colors.white,
-                                            fontSize: 20.0)),
-                                    Text("SPIRITUAL EMPOWERMENT",
+                                            fontSize: 18.0,
+											fontStyle: FontStyle.italic
+											)),),
+                                    Padding( padding: EdgeInsets.only(top:10,bottom:20, right: 50), child: Text("SPIRITUAL EMPOWERMENT",
                                         style: TextStyle(
                                             color: Colors.white,
-                                            fontSize: 20.0)),
-                                    Row(
+                                            fontSize: 20.0,
+											fontWeight: FontWeight.w800
+											)),),
+                                    Padding(
+										padding: EdgeInsets.only(left: 25),
+								     child:Row(
                                       children: [
-                                        Icon(Icons.lock_clock,
+                                        Icon(Icons.access_time,
                                             color: Colors.white),
                                         SizedBox(width: 10),
                                         Text("05:07 AM | 19 Mon 2021",
                                             style: TextStyle(
                                                 color: Colors.white,
-                                                fontSize: 20.0)),
+                                                fontSize: 16.0,
+												fontStyle: FontStyle.italic
+												)),
                                       ],
-                                    ),
-                                    Row(children: [
+                                    ),),
+                                    Padding(
+										padding: EdgeInsets.symmetric(horizontal: 5, vertical: 19),
+								     child:Row(children: [
                                       RaisedButton(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 50),
@@ -117,7 +133,7 @@ class _BodyState extends State<Body> {
                                               borderRadius: BorderRadius.all(
                                                   Radius.circular(32.0))),
                                           onPressed: () {}),
-                                    ])
+                                    ]))
                                   ]))))
                           .toList())),
             ),
@@ -169,6 +185,32 @@ class _BodyState extends State<Body> {
                           }))
                 ],
               ),
+			  SizedBox( height: 20 ),
+			  Container( 
+				  height: 50,
+				  width: 280,
+				  decoration: BoxDecoration( 
+					  color:  Colors.white,
+					  borderRadius: BorderRadius.all(Radius.circular(26)),
+				  ),
+				  child: Row( 
+					  mainAxisAlignment: MainAxisAlignment.end,
+					  crossAxisAlignment: CrossAxisAlignment.center,
+					  children: [
+						Padding(padding : EdgeInsets.only(right: 80),child: Text( "Search Here...." ),),
+						Container( 
+							height:40,
+							width: 50,
+							decoration:BoxDecoration( 
+								color: Colors.black,
+								borderRadius: BorderRadius.all(Radius.circular(100))
+							),
+							child:Icon(Icons.search,color:Colors.white)
+						)
+					  ]
+				  )
+			  )
+				 
             ]),
           ]))
     ]));

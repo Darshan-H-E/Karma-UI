@@ -6,10 +6,10 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.orange[400],
-        appBar: AppBar(
-          backgroundColor: Colors.orange[400],
-          elevation: 0,
-        ),
+        // appBar: AppBar(
+        //   backgroundColor: Colors.orange[400],
+        //   elevation: 0,
+        // ),
         // leading: CircleAvatar(
         // backgroundColor: Colors.orange[200],
         // child: IconButton(icon:Icon(Icons.arrow_back_ios_rounded,color:Colors.white),
@@ -169,7 +169,9 @@ class _BodyState extends State<Body> {
                     // )
                   ],
                 )),
-            Column(children: [
+            Column(
+				children: [
+              SizedBox(height: 60),
               Row(
                 children: [
                   Padding(
@@ -179,7 +181,7 @@ class _BodyState extends State<Body> {
                         child: IconButton(
                             icon: Icon(Icons.arrow_back_ios_rounded,
                                 color: Colors.white),
-                            onPressed: () {})),
+                            onPressed: () { Navigator.pop(context); })),
                   ),
                   Padding(
                     padding: EdgeInsets.only(left: 20),
@@ -196,7 +198,7 @@ class _BodyState extends State<Body> {
                   )
                 ],
               ),
-              SizedBox(height: 70.0),
+              SizedBox(height: 8.0),
               Container(
                   padding: EdgeInsets.all(10.0),
                   width: MediaQuery.of(context).size.width / 3,

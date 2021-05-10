@@ -18,9 +18,9 @@ class MyApp extends StatelessWidget {
 			),
 			// home: LoginScreen(),
 			routes: {
-			  // '/': (context) => LoginScreen(),
+			  '/': (context) => LoginScreen(),
 			  '/home': (context) => KarmaPage(),
-			  '/': (context) => ProfilePage()
+			  '/profile': (context) => ProfilePage()
 			}
 		);
 	}

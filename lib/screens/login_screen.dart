@@ -38,14 +38,15 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Container(
                 height: 280,
                 width: double.infinity,
-                decoration: BoxDecoration(color: Colors.orange[400]),
+                decoration: BoxDecoration(color: Colors.orange[600]),
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      SizedBox(height: 35),
                       Text("KARMA",
-                          style: TextStyle(color: Colors.white, fontSize: 26)),
+                          style: TextStyle(color: Colors.white, fontSize: 36)),
                       const Divider(
-                        height: 5,
+                        height: 2,
                         color: Colors.white,
                         thickness: 1,
                         indent: 150,
@@ -57,35 +58,32 @@ class _LoginScreenState extends State<LoginScreen> {
                       Text("LOGIN",
                           style: TextStyle(color: Colors.white, fontSize: 18)),
                     ]))),
-        //text fields
-        // Padding(
-        //     padding: EdgeInsets.all(20),
-        //     child: TextField(
-        //       decoration: InputDecoration(
-        //         border: OutlineInputBorder(),
-        //         hintText: 'Phone Number',
-        //       ),
-        //     )),
         Form(
             key: globalFormKey,
             child: Column(children: <Widget>[
               SizedBox(height: 60),
-        new TextFormField(
+          Padding( padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10), child: TextFormField(
           keyboardType: TextInputType.emailAddress,
           onSaved: (input) => loginRequestModel.email = input,
           validator: (input) =>
               !input.contains('@') ? "Email Id should be valid" : null,
-          decoration: new InputDecoration(
+          decoration: InputDecoration(
             hintText: "Email Address",
-            enabledBorder: UnderlineInputBorder(
+				filled: true,
+				enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
-                    color: Theme.of(context).accentColor.withOpacity(0.2))),
-            focusedBorder: UnderlineInputBorder(
-                borderSide: BorderSide(color: Theme.of(context).accentColor)),
+					color: Colors.grey[200]
+					),
+				borderRadius: BorderRadius.all(Radius.circular(10)),
+				),
+				focusedBorder: UnderlineInputBorder(
+				  borderSide: BorderSide(color: Colors.grey[200])),
+
+				fillColor: Colors.grey[300],
           ),
-        ),
+        ),),
         SizedBox(height: 20),
-        new TextFormField(
+        Padding( padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10), child:TextFormField(
           style: TextStyle(color: Theme.of(context).accentColor),
           keyboardType: TextInputType.text,
           onSaved: (input) => loginRequestModel.password = input,
@@ -95,39 +93,29 @@ class _LoginScreenState extends State<LoginScreen> {
           obscureText: hidePassword,
           decoration: new InputDecoration(
             hintText: "Password",
+				filled: true,
             enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
-                    color: Theme.of(context).accentColor.withOpacity(0.2))),
+					color: Colors.grey[200]
+					),
+				borderRadius: BorderRadius.all(Radius.circular(10)),
+				),
             focusedBorder: UnderlineInputBorder(
-                borderSide: BorderSide(color: Theme.of(context).accentColor)),
+                borderSide: BorderSide(color: Colors.grey[200])),
+				fillColor: Colors.grey[300],
             suffixIcon: IconButton(
               onPressed: () {
                 setState(() {
                   hidePassword = !hidePassword;
                 });
               },
-              color: Theme.of(context).accentColor.withOpacity(0.4),
+              color: Colors.black.withOpacity(0.4),
               icon:
                   Icon(hidePassword ? Icons.visibility_off : Icons.visibility),
             ),
           ),
-        ),
+        ),),
             ])),
-        // Padding(
-        //     padding: EdgeInsets.all(20),
-        //     child: TextField(
-        //       obscureText: true,
-        //       decoration: InputDecoration(
-        //         suffixIcon: Icon(Icons.visibility, color: Colors.black),
-        //         // border: InputBorder.none,
-        //         border: OutlineInputBorder(),
-        //         hintText: 'Password',
-        //       ),
-        //     )),
-        // Padding(
-        // 	padding: EdgeInsets.only(left: 210),
-        // 	child: TextButton(child: Text("Forgot Password", style: TextStyle(color: Colors.orange[400], fontSize: 18)),onPressed:(){})
-        // ),
         Align(
             alignment: Alignment.topRight,
             child: TextButton(
@@ -137,7 +125,7 @@ class _LoginScreenState extends State<LoginScreen> {
         SizedBox(height: 130),
 
         FlatButton(
-          padding: EdgeInsets.symmetric(vertical: 12, horizontal: 80),
+          padding: EdgeInsets.symmetric(vertical: 16, horizontal: 60),
           onPressed: () {
             if (validateAndSave()) {
               print(loginRequestModel.toJson());
@@ -156,12 +144,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   if (value.token.isNotEmpty) {
 					print("login successful");
 					Navigator.pushNamed(context,'/home');
-                    // final snackBar = SnackBar(content: Text("Login Successful"));
-                    // scaffoldKey.currentState.showSnackBar(snackBar);
                   } else {
 					print("login unsuccesfful");
-                    // final snackBar = SnackBar(content: Text(value.error));
-                    // scaffoldKey.currentState.showSnackBar(snackBar);
                   }
                 }
               });
@@ -171,8 +155,9 @@ class _LoginScreenState extends State<LoginScreen> {
             "Login",
             style: TextStyle(color: Colors.white),
           ),
-          color: Theme.of(context).accentColor,
-          shape: StadiumBorder(),
+            color: Colors.lightGreen,
+            shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(12.0))),
         ),
 
         // RaisedButton(
