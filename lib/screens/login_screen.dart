@@ -161,15 +161,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 borderRadius: BorderRadius.all(Radius.circular(12.0))),
         ),
 
-        // RaisedButton(
-        //     padding: EdgeInsets.fromLTRB(70, 20, 70, 20),
-        //     color: Colors.lightGreen,
-        //     child: Text("Login",
-        //         style: TextStyle(color: Colors.white, fontSize: 18)),
-        //     shape: const RoundedRectangleBorder(
-        //         borderRadius: BorderRadius.all(Radius.circular(12.0))),
-        //     onPressed: () {}),
-        // SizedBox(height:10),
         Row(mainAxisAlignment: MainAxisAlignment.center, children: [
           Text("Not a member yet?",
               style: TextStyle(color: Colors.black, fontSize: 16)),
