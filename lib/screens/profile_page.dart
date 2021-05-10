@@ -1,19 +1,12 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_switch/flutter_switch.dart';
+
+import '../constants.dart';
 
 class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.orange[400],
-        // appBar: AppBar(
-        //   backgroundColor: Colors.orange[400],
-        //   elevation: 0,
-        // ),
-        // leading: CircleAvatar(
-        // backgroundColor: Colors.orange[200],
-        // child: IconButton(icon:Icon(Icons.arrow_back_ios_rounded,color:Colors.white),
-        // onPressed:(){ Navigator.pop(context); }
+        backgroundColor: kOrange1,
         body: Body());
   }
 }
@@ -37,16 +30,14 @@ class _BodyState extends State<Body> {
             Container(
                 width: double.infinity,
                 margin: EdgeInsets.only(top: size.height * 0.2),
-                // padding: EdgeInsets.only(top: size.height*0.10,right: 80),
                 padding: EdgeInsets.only(top: size.height * 0.10),
-                height: 600,
+                height: 700,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(44),
                       topRight: Radius.circular(44)),
                 ),
-                //TODO: Name, Ph.no, Loc, Interest
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -129,7 +120,7 @@ class _BodyState extends State<Body> {
                               height: 30,
                               decoration: BoxDecoration(
                                   color: widget.value
-                                      ? Colors.orange[400]
+                                      ? kOrange1
                                       : Colors.grey,
                                   borderRadius: BorderRadius.circular(5.0)),
                               child: Row(children: [
@@ -153,20 +144,6 @@ class _BodyState extends State<Body> {
                                                 BorderRadius.circular(5.0))))
                               ]))
                         ])),
-                    // FlutterSwitch(
-                    // 	width: 10,
-                    // 	height: 10,
-                    // 	borderRadius: 0.0
-                    // )
-                    // Padding( padding: EdgeInsets.symmetric(vertical: 10, horizontal: 35),
-                    // ),
-                    // Container(
-                    // 	height: 24,
-                    // 	width: 24,
-                    // decoration: BoxDecoration(
-                    // border: Border.all(style: )
-                    // )
-                    // )
                   ],
                 )),
             Column(
@@ -177,7 +154,7 @@ class _BodyState extends State<Body> {
                   Padding(
                     padding: EdgeInsets.only(left: 20),
                     child: CircleAvatar(
-                        backgroundColor: Colors.orange[200],
+                        backgroundColor: kOrange2,
                         child: IconButton(
                             icon: Icon(Icons.arrow_back_ios_rounded,
                                 color: Colors.white),
@@ -191,7 +168,7 @@ class _BodyState extends State<Body> {
                   Padding(
                     padding: EdgeInsets.only(left: 200),
                     child: CircleAvatar(
-                        backgroundColor: Colors.orange[200],
+                        backgroundColor:kOrange2 ,
                         child: IconButton(
                             icon: Icon(Icons.edit, color: Colors.white),
                             onPressed: () {})),

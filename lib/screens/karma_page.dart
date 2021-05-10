@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 
+import '../constants.dart';
+
 class KarmaPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.orange[400],
-        // appBar: AppBar(
-        // backgroundColor: Colors.orange[400],
-        // elevation: 0,
-        // ),
+        backgroundColor: kOrange1,
         body: Body());
   }
 }
@@ -109,7 +107,7 @@ class _BodyState extends State<Body> {
                                       RaisedButton(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 50),
-                                          color: Colors.green,
+                                          color: kGreen,
                                           child: Text("JOINED",
                                               style: TextStyle(
                                                   color: Colors.white,
@@ -154,7 +152,7 @@ class _BodyState extends State<Body> {
                   Padding(
                     padding: EdgeInsets.only(left: 20),
                     child: CircleAvatar(
-                        backgroundColor: Colors.orange[200],
+                        backgroundColor:kOrange2 ,
                         child: IconButton(
                             icon: Icon(Icons.arrow_back_ios_rounded,
                                 color: Colors.white),

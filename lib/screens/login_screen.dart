@@ -1,6 +1,7 @@
 import 'package:demof/api/api_service.dart';
 import 'package:demof/model/login_model.dart';
 import 'package:flutter/material.dart';
+import '../constants.dart';
 
 import '../Progress.dart';
 
@@ -38,7 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Container(
                 height: 280,
                 width: double.infinity,
-                decoration: BoxDecoration(color: Colors.orange[600]),
+                decoration: BoxDecoration(color: kOrange1),
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -120,7 +121,7 @@ class _LoginScreenState extends State<LoginScreen> {
             alignment: Alignment.topRight,
             child: TextButton(
                 child: Text("Forgot Password   ",
-                    style: TextStyle(color: Colors.orange[400], fontSize: 18)),
+                    style: TextStyle(color: kOrange1, fontSize: 18)),
                 onPressed: () {})),
         SizedBox(height: 130),
 
@@ -174,7 +175,7 @@ class _LoginScreenState extends State<LoginScreen> {
               style: TextStyle(color: Colors.black, fontSize: 16)),
           TextButton(
               child: Text("Click here",
-                  style: TextStyle(color: Colors.orange[400], fontSize: 16)),
+                  style: TextStyle(color: kOrange1, fontSize: 16)),
               onPressed: () {})
         ])
       ],
